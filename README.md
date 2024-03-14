@@ -58,4 +58,4 @@ $ python Leaky ReLU.py
  ```shell
 $ python Imagenet.py
 ```
-Set a new download directory for 'model = torchvision.models.resnet50(pretrained=True)', we need to export 'TORCH_HOME=/torch_cache'
+Set a new download directory for `'model = torchvision.models.resnet50(pretrained=True)'`, we need to export `'TORCH_HOME=/torch_cache'`

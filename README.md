@@ -26,4 +26,5 @@ Please download the Imagenet Dataset.
 All used ResNet18 and Leaky ReLU models can be downloaded from here. Please put them in ResNet18().
 
 # Run dying neurons accumulation for a ResNet-18 trained on CIFAR-10.
+```shell
 '$ python run_EGSDE.py'

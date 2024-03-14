@@ -34,5 +34,5 @@ $ python Resnet18.py
 $ python Leaky ReLU.py
 $ python Swish.py
 ```
-- . In Leaky ReLU.py, replace activation functions ReLU with LeakyReLU.
-- . In Swish.py, replace activation functions ReLU with Swish.
+- In Leaky ReLU.py, replace activation functions ReLU with LeakyReLU.
+- In Swish.py, replace activation functions ReLU with Swish.

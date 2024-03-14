@@ -15,7 +15,6 @@ We challenge the conventional perspective on "dying neurons" in deep neural netw
 
 # Dependencies
 ```shell
-# Dependencies
 conda create -n myenv python=3.7
 conda activate myenv
 conda install -c pytorch pytorch==1.9.0 torchvision==0.10.0
@@ -59,3 +58,4 @@ $ python Leaky ReLU.py
  ```shell
 $ python Imagenet.py
 ```
+Set a new download directory for 'model = torchvision.models.resnet50(pretrained=True)', we need to export 'TORCH_HOME=/torch_cache'

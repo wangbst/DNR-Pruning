@@ -23,7 +23,7 @@ pip install scipy
 ```
 
 # Datasets
-Please download the Imagenet Dataset.
+Please download the Imagenet Dataset. 
 
 # ResNet18 and Leaky ReLU
 All used ResNet18 and Leaky ReLU models can be downloaded from here. Please put them in ResNet18().
@@ -36,3 +36,26 @@ $ python Swish.py
 ```
 - In Leaky ReLU.py, replace activation functions ReLU with LeakyReLU.
 - In Swish.py, replace activation functions ReLU with Swish.
+
+# Run SGD noise and SGD for a ResNet-18 trained on CIFAR-10.
+ ```shell
+$ python SGD noise.py
+$ python SGD.py
+```
+
+# Run Neural sparsity, structured methods for ResNet-18 on CIFAR-10.
+ ```shell
+$ python Resnet18.py
+$ python Leaky ReLU.py
+```
+
+ # Run Weight sparsity, structured methods for ResNet-18 on CIFAR-10.
+ ```shell
+$ python Resnet18.py
+$ python Leaky ReLU.py
+```
+
+# Run ResNet-50 model trained on ImageNet using different criteria when pruning at approximately 80% and 90% weight sparsity.
+ ```shell
+$ python Imagenet.py
+```

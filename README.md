@@ -15,10 +15,10 @@ We challenge the conventional perspective on "dying neurons" in deep neural netw
 
 # Dependencies
 ```shell
-'conda create -n myenv python=3.7'
-'conda activate myenv'
-'conda install -c pytorch pytorch==1.9.0 torchvision==0.10.0'
-'pip install scipy'
+'conda create -n myenv python=3.7
+conda activate myenv
+conda install -c pytorch pytorch==1.9.0 torchvision==0.10.0
+pip install scipy'
 
 # Datasets
 Please download the Imagenet Dataset.

@@ -1,4 +1,4 @@
-# Explainable Pruning: Efficient and Explainable Neural Network Pruning Leveraging Neuron Death
+# Pruning: Efficient and Explainable Neural Network Pruning Leveraging Neuron Death
 This is the official implementation for Explainable Pruning: Efficient and Explainable Neural Network Pruning Leveraging Neuron Death.
 
 # Overview

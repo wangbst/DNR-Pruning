@@ -1,4 +1,4 @@
-# Pruning: Efficient and Explainable Neural Network Pruning Leveraging Neuron Death
+# Pruning: Efficient Neural Network Pruning via Dying Neuron Analysis
 This is the official implementation for Explainable Pruning: Efficient and Explainable Neural Network Pruning Leveraging Neuron Death.
 
 # Overview

@@ -1,4 +1,4 @@
-# Pruning: Efficient Neural Network Pruning via Dying Neuron Analysis
+# DS-Pruning: Harnessing Dying Neurons for Sparsity-Driven Structured Pruning in Neural Networks
 This is the official implementation for Explainable Pruning: Efficient and Explainable Neural Network Pruning Leveraging Neuron Death.
 
 # Overview

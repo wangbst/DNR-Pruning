@@ -48,9 +48,3 @@ $ python Leaky ReLU.py
 $ python Resnet18.py
 $ python Leaky ReLU.py
 ```
-
-# Run ResNet-50 model trained on ImageNet using different criteria when pruning at approximately 80% and 90% weight sparsity.
- ```shell
-$ python Imagenet.py
-```
-Set a new download directory for `'model = torchvision.models.resnet50(pretrained=True)'`, we need to export `'TORCH_HOME=/torch_cache'`

@@ -97,7 +97,6 @@ for idx in indices:
 weight_changes = [[] for _ in indices]
 weight_changes1 = [[] for _ in indices]
 
-# 添加计算平均信息熵的类
 class LayerEntropyHook:
     def __init__(self, module, layer_name):
         
@@ -110,7 +109,6 @@ class LayerEntropyHook:
     def close(self):
         self.hook.remove()
 
-# 添加对输入层和各卷积层的平均信息熵的计算
 layer_names = ['conv1'] + [f'layer{i}' for i in range(1, 5)] + ['fc']
 # Instantiate LayerEntropyHook for each layer
 entropy_hooks = [LayerEntropyHook(getattr(model, layer_name), name) for layer_name, name in zip(layer_names, layer_names)]
@@ -185,13 +183,6 @@ for epoch in range(100):  # loop over the dataset
     # Calculate training error
     train_loss = running_loss / len(trainloader)
     train_losses.append(train_loss)
-    
-    # 记录信息熵到WandB
-    wandb.log({'epoch': epoch, 'accuracy': train_acc, 'loss': train_loss})
-    
-    # 记录各层信息熵到WandB
-    for hook in entropy_hooks:
-        wandb.log({f'{hook.layer_name}_entropy': torch.mean(torch.tensor(hook.entropies))})
         
     print(f'Training Error at Epoch {epoch + 1}: {train_loss}')
         
@@ -226,25 +217,6 @@ for epoch in range(100):  # loop over the dataset
     # Log test error
     wandb.log({'epoch': epoch, 'val_loss': test_loss, 'val_accuracy': test_acc})
     val_losses.append(test_loss)
-
-    # Perform pruning based on KL divergence and entropy reduction
-    for idx, layer_idx in enumerate(indices):
-        for ch_idx, entropies_ch in enumerate(entropies[layer_idx]):
-            prev_entropy = entropies[layer_idx][ch_idx][epoch - 1] if epoch > 0 else entropies[layer_idx][ch_idx][0]
-            curr_entropy = entropies[layer_idx][ch_idx][epoch]
-            entropy_reduction = prev_entropy - curr_entropy
-            
-            if entropy_reduction < 0:
-                kl_divergence += abs(entropy_reduction)
-            
-            if entropy_reduction < 0 and kl_divergences[epoch]-- kl_divergences[epoch - 1] > 0:  # If entropy reduced (bad) and KL divergence is non-zero
-                
-                layer = conv_modules[layer_idx]
-                if hasattr(layer, 'bias') and layer.bias is not None:
-                    layer.bias.data[ch_idx].zero_()
-                layer.weight.data[ch_idx].zero_()
-                    
-                pruned_neurons_epoch += 1
                 
     pruned_neurons.append(pruned_neurons_epoch)
     kl_divergences.append(kl_divergence)

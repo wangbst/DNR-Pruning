@@ -84,11 +84,6 @@ for idx in indices:
     hooks.append(ConvEntropyHook(conv_modules[idx], idx))
     
 
-# Create a list to store weight changes for each convolutional layer
-weight_changes = [[] for _ in indices]
-weight_changes1 = [[] for _ in indices]
-
-# 添加计算平均信息熵的类
 class LayerEntropyHook:
     def __init__(self, module, layer_name):
         
@@ -161,15 +156,6 @@ for epoch in range(100):  # loop over the dataset
         # Print statistics
         running_loss += loss.item()
         
-        if i % 10 == 9:
-            for idx, layer_idx in enumerate(indices):
-                layer = conv_modules[layer_idx]
-                weight = layer.weight.data.cpu().numpy()
-            
-                weight_changes[idx].append([np.mean(weight[i]) for i in range(weight.shape[0])])
-                
-                weight_change1 = np.mean(weight)
-                weight_changes1[idx].append(weight_change1)
         
     # Calculate training error
     train_loss = running_loss / len(trainloader)

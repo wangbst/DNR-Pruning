@@ -8,10 +8,6 @@ In this paper, we challenge the conventional view of dying neurons—neurons tha
 
 ![BS](https://github.com/wangbst/ExplainableP/assets/97005040/ed999e78-f198-42fb-a556-6f308ac0a163)![LR](https://github.com/wangbst/ExplainableP/assets/97005040/ac4abc77-595f-4d42-9a1f-4e81b2bb2432)![Regularization](https://github.com/wangbst/ExplainableP/assets/97005040/2c054748-7efc-434c-b321-90650f35ded3) 
 
-![SGD noise](https://github.com/wangbst/ExplainableP/assets/97005040/9fcbda8e-70dc-457f-a219-ae6afa3599ae) ![SGD](https://github.com/wangbst/ExplainableP/assets/97005040/ee9296ec-fabb-4b5b-83f7-303cca0c35b9)
-
-![2](https://github.com/wangbst/ExplainableP/assets/97005040/f4196e5d-bbe7-4362-a966-9f8235cdb0be) ![3](https://github.com/wangbst/ExplainableP/assets/97005040/bb2f2591-617a-4a28-bd7a-f7ec9393de88) ![4](https://github.com/wangbst/ExplainableP/assets/97005040/eb9e9ee3-f95f-4c00-9c52-ecb43afa40cc) ![5](https://github.com/wangbst/ExplainableP/assets/97005040/c3bd0cfa-7af4-40a4-86a3-c2f92de4d0e8) ![result](https://github.com/wangbst/ExplainableP/assets/97005040/571ae237-939e-49cc-b1b1-c7904e42c73a)
-
 # Dependencies
 ```shell
 conda create -n myenv python=3.7
